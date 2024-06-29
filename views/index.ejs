@@ -1,11 +1,25 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<div class="index">
+  <h1>Chat</h1>
+  <% if (currentUser) { %>
+  <a class="btn-primary" href="/message/create">Create Message</a>
+  <% } %>
+  <div class="messages">
+    <% if (messages.length) { %> <% messages.forEach(message => { %>
+    <div class="message">
+      <h2><%= message.title %></h2>
+      <p><%= message.message %></p>
+      <% if (currentUser) { %>
+      <p>@<%= currentUser.first_name %>_<%= currentUser.last_name %></p>
+      <p><%= message.date_formatted %></p>
+      <% if (currentUser.membership_status === 'Admin') { %>
+      <a href="<%=message.url+'/delete'%>">Delete</a>
+      <% } %> <% } else { %>
+      <p>@Anonymous (Login to visualize the name)</p>
+      <p>Unknown time (Login to visualize the posted date)</p>
+      <% } %>
+    </div>
+    <% }) %> <% } else { %>
+    <p>no messages found</p>
+    <% } %>
+  </div>
+</div>

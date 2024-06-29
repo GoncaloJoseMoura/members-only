@@ -1,0 +1,27 @@
+<div class="header">
+  <a class="logo" href="/">
+    <img src="/images/favicon.svg" alt="Shop Logo" />
+    <p>Members Only</p>
+  </a>
+  <nav class="nav-links">
+    <ul>
+      <% if (currentUser) { %> <% if (currentUser.membership_status !== 'Admin')
+      {%>
+      <li>
+        <a href="/user/admin">Get admin</a>
+      </li>
+      <% } %>
+      <li>
+        <a href="/user/logout">Logout</a>
+      </li>
+      <% } else { %>
+      <li class="category-nav">
+        <a href="/user/login">Login</a>
+      </li>
+      <li class="item-nav">
+        <a href="/user/sign-up">Sign up</a>
+      </li>
+      <% } %>
+    </ul>
+  </nav>
+</div>

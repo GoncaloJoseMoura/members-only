@@ -1,0 +1,18 @@
+<h1>Get Admin Role</h1>
+<% if (currentUser.membership_status == 'Admin') {%>
+<p>You already have Admin privileges.</p>
+<% } %>
+<form action="" method="POST">
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input id="password" name="password" type="password" />
+  </div>
+  <% if(errors) { %>
+  <ul>
+    <% errors.forEach(error => { %>
+    <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+  <% } %>
+  <button type="submit" class="btn-primary">Send</button>
+</form>

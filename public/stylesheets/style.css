@@ -1,8 +1,166 @@
 body {
-  padding: 50px;
+  margin: 0px;
+  padding: 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: grid;
+  grid-template-rows: 80px 1fr 40px;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: black;
+}
+
+h1 {
+  margin: 50px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-group {
+    display: flex;
+    flex: 1 1 100%;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 10px;
+
+    label {
+      width: 100px;
+      font-size: 16px;
+    }
+
+    input {
+      padding: 5px 10px;
+      min-width: 20vw;
+    }
+  }
+}
+
+.btn-primary {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 5px 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
+  background-color: #38bdf8;
+  color: white;
+  cursor: pointer;
+  margin-top: 25px;
+}
+
+.header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 20vw;
+  align-items: center;
+  height: 80px;
+  background-color: #f9faff;
+  text-decoration: none;
+  grid-row: 1;
+
+  .logo {
+    padding-left: 40px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 600;
+    gap: 10px;
+
+    img {
+      width: 25px;
+      height: 30px;
+    }
+  }
+
+  .nav-links {
+    padding-right: 40px;
+    width: 100%;
+    font-size: 18px;
+
+    ul {
+      margin: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      list-style: none;
+      padding-left: 0;
+
+      li {
+        a {
+          border-radius: 6px;
+          padding: 5px 20px;
+          background-color: #38bdf8;
+          color: white;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  h1 {
+    margin: 50px 0px 0px;
+  }
+
+  .btn-primary {
+    margin: 0px;
+  }
+}
+
+.messages {
+  width: 60vw;
+  border: 2px solid #2c2c2c;
+  border-radius: 12px;
+  margin-bottom: 50px;
+
+  .message {
+    padding: 20px 40px;
+  }
+
+  .message:last-child {
+    border-radius: 0px 0px 12px 12px;
+  }
+  .message:nth-child(even) {
+    background-color: #f9faff;
+  }
+}
+
+.footer {
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  background-color: #2c2c2c;
+  height: 40px;
+
+  p {
+    color: white;
+  }
+  img {
+    height: 20px;
+    width: auto;
+  }
 }
