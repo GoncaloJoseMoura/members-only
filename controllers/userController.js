@@ -79,7 +79,7 @@ exports.user_login_get = (req, res, next) => {
   
 exports.user_login_post = passport.authenticate("local", {
   successRedirect: "/",
-  failureRedirect: "/"
+  failureRedirect: "/user/login"
 })
 
 exports.user_admin_get = (req, res, next) => {
